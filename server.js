@@ -8,8 +8,8 @@ const port = process.env.PORT || 3000;
 
 const init = async () => {
   try {
+    db.authenticate();
     await syncAndSeed();
-    // db.authenticate();
     app.listen(port, () => {
       console.log(`App listening on port ${port}!`)})
   }
