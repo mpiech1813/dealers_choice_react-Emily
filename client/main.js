@@ -9,7 +9,15 @@ import Months from './Months.js'
 class Main extends React.Component{
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+      months: [],
+      // month: {
+      //   id:'',
+      //   name:'',
+      //   flavor1:'',
+      //   flavor2:''
+      // }
+    }
   }
   async componentDidMount(){
     const responses=await axios.get('/api/months')
