@@ -4,10 +4,16 @@ const orderRouter = require('express').Router();
 orderRouter.get('/', async (req, res, next) => {
   try {
     const allOrders = await Order.findAll({
-      include: [{
-        model: { Month, Customer }
-      }]
-    });
+      include: [
+        {
+        model: Month,
+        attributes: []
+        },
+        {
+        model: Customer
+        }
+      ]
+  });
     res.send(allOrders);
   }
   catch (error) {

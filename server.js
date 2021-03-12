@@ -1,9 +1,21 @@
 const { syncAndSeed, db } = require('./db/seed');
-// const { db }= require('./db/index');
-const app = require('./api/app.js');
+const express = require('express');
 const port = process.env.PORT || 3000;
+const path = require('path');
+const morgan = require('morgan');
 
-// app.use('/api', require('./api/app'));
+const app = express();
+
+app.use(morgan('dev'));
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.use(express.static(path.join(__dirname, '/public')));
+
+app.use('/api', require('./api/app'));
+
+app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '/public/index.html')));
+
 
 const init = async () => {
   try {

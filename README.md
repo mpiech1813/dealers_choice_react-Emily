@@ -1,9 +1,16 @@
 # dealers_choice_react
 
+CURRENT ISSUES:
+- can't get monthId and customerId on seeded order data
 
 QUESTIONS:
  - Babel loader: where is it installed?
- - when and how does webpack make the Dist/Main folder and file?
+ - doing SPA with React?
+
+
+ RESOLVED ISSUES:
+ - originally wrote const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:3000/kb_creamery_2', { logging: false });
+ NOTE: the port is 5432 for pg! Silly syntax mistake was made
 
 
 Goal:

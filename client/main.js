@@ -1,1 +1,35 @@
 // React
+import React from 'react';
+import ReactDOM from 'react-dom';
+import axios from 'axios';
+
+
+
+class Main extends React.Component{
+  constructor() {
+    super()
+    this.state = []
+  }
+  async componentDidMount(){
+    const responses=await axios.get('/api/months')
+    const months=responses.data
+    // console.log(months)
+    this.setState({months})
+  }
+  render () {
+    // console.log(this.state)
+    return (
+      <div id="main" className="container">
+        <h2 id="title"> Kettlebell Creamery </h2>
+        < Months months= {this.state.months}/>
+      </div>
+    )
+  }
+
+}
+
+
+// const root = document.querySelector('#root');
+ReactDOM.render(<Main/>, document.querySelector('#root'));
+
+export default Main

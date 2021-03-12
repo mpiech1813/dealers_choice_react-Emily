@@ -5,7 +5,7 @@ const monthsRouter = require('express').Router();
 monthsRouter.get('/', async(req, res, next) => {
   try {
     const response = await Month.findAll();
-    console.log(response)
+    // console.log(response)
     res.send(response);
   }
   catch (error) {

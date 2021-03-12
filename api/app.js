@@ -1,13 +1,8 @@
-const express = require('express');
-const path = require('path');
-const morgan = require('morgan');
+const router = require('express').Router();
 
-const app = express();
-
-app.use(morgan('dev'));
-
-app.use('/monthRouter', require('./monthsRouter'));
-app.use('/orderRouter', require('./ordersRouter'));
+router.use('/months', require('./monthsRouter'));
+router.use('/orders', require('./ordersRouter'));
+router.use('/customers', require('./customersRouter'));
 
 
-module.exports = app
+module.exports = router
