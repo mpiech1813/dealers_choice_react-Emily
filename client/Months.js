@@ -1,6 +1,6 @@
 import React from "react";
 const Months = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div className="months">
       {props.months.map((month) => {

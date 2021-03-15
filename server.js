@@ -19,6 +19,7 @@ app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '/public/inde
 
 const init = async () => {
   try {
+
     db.authenticate();
     await syncAndSeed();
     app.listen(port, () => {

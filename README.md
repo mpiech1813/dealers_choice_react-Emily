@@ -1,11 +1,10 @@
 # dealers_choice_react
 
 CURRENT ISSUES:
-- can't get monthId and customerId on seeded order data
-
-QUESTIONS:
- - Babel loader: where is it installed?
- - doing SPA with React?
+- can't get monthId and customerId on seeded order data in the db
+- localhost3000 not rendering data:
+  - props are undefined
+- webpack is not rebuilding / watching file changes
 
 
  RESOLVED ISSUES:
